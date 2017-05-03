@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var app = express();
 var r = require('rethinkdbdash')({
   db: "url_shortener"
@@ -26,6 +27,7 @@ var index = require('./routes/index');
 var api = require('./routes/api');
 app.use('/', index);
 app.use('/api', api);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
