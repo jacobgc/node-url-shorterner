@@ -13,10 +13,7 @@ router.post('/shorten', function (req, res, next) {
             newLink.addToDB().then(() => {
             });
         }
-        res.json({
-            status: "success",
-            shortUrl : newLink.shortUrl
-        })
+        res.send(newLink.shortUrl);
     })
 });
 
@@ -25,15 +22,9 @@ router.post('/lookup', function (req, res, next) {
     newLink.shortUrl = req.body.shortUrl;
     newLink.lookup().then((result)=>{
         if(result === false){
-            res.json({
-                status: "success",
-                result: "false"
-            })
+            res.send('false');
         }else{
-            res.json({
-                status: "success",
-                url: result
-            })
+            res.send(result);
         }
     });
 
