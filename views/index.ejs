@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+
+<head>
+  <title><%=title%></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <!-- Milligram.io css framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css" integrity="sha256-Ro/wP8uUi8LR71kwIdilf78atpu8bTEwrK5ZotZo+Zc="
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="column column-50">
+        <h1>Welcome to ι.xyz URL shortener</h1>
+        <blockquote>
+          <p>
+            To start enter a URL to be shortened on the right or use our reverse lookup tool <a href='/lookup'>Here</a> to
+            find out where one of our URLs go
+          </p>
+        </blockquote>
+      </div>
+      <div class="column column-50">
+        <form action='/show' method="get">
+        <fieldset>
+          <label for="url">URL to be shortened</label>
+          <input type="url" placeholder="https://jacobgc.me" name="url" required>
+          <input class="button-primary" type="submit" value="Shorten">
+          <a class="pull-right" href="/sharex">Or use our sharex config</a>
+        </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>
